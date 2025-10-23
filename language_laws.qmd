@@ -1,0 +1,211 @@
+---
+title: "Introduction to </br> Digital Humanities"
+subtitle: "(Language Laws)"
+author: Maciej Eder
+date: 2025/10/03
+format: 
+  revealjs:
+    theme: files/pp.scss
+    logo: files/DigiTS-RGB-short-SMALL.svg
+    css: files/big_logo_DigiTS.css
+    self_contained: false
+---
+
+
+
+
+
+```{r setup, include=FALSE}
+# set global chunk options
+
+library(knitr)
+library(plotly)
+#library(fmsb)
+
+#opts_chunk$set(cache=TRUE)
+```
+
+
+
+
+
+
+## topics covered today
+
+- Word frequencies
+- Language laws
+- Zipf's Law(s)
+- Manzerath Law
+
+
+
+
+# word frequencies
+
+
+## Words are not distributed evenly
+
+It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife. 
+However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters. 
+
+“My dear Mr. Bennet,” said his lady to him one day, “have you heard that Netherfield Park is let at last?” 
+Mr. Bennet replied that he had not. 
+
+“But it is,” returned she; “for Mrs. Long has just been here, and she told me all about it.” 
+Mr. Bennet made no answer. 
+
+“Do you not want to know who has taken it?” cried his wife impatiently. 
+“You want to tell me, and I have no objection to hearing it.” 
+This was invitation enough. 
+
+
+
+
+
+## Function words = frequent words
+
+**It** **is** **a** truth universally acknowledged, **that** **a** single man **in** possession **of** **a** good fortune, must **be** **in** want **of** **a** wife. 
+**However** little known **the** feelings **or** views **of** **such** **a** man **may** **be** **on** **his** first entering **a** neighbourhood, **this** truth **is** **so** well fixed **in** **the** minds **of** **the** surrounding families, **that** **he** **is** considered **the** rightful property **of** **some** one **or** other **of** **their** daughters. 
+
+“**My** dear Mr. Bennet,” said **his** lady **to** **him** one day, “**have** **you** heard **that** Netherfield Park **is** let **at** **last**?” 
+Mr. Bennet replied **that** **he** **had** **not**. 
+
+“**But** **it** **is**,” returned **she**; “**for** Mrs. Long **has** **just** **been** here, **and** **she** told **me** all **about** **it**.” 
+Mr. Bennet made **no** answer. 
+
+“**Do** **you** **not** want **to** know **who** **has** taken **it**?” cried **his** wife impatiently. 
+“**You** want **to** tell **me**, **and** **I** **have** **no** objection **to** hearing **it**.” 
+**This** **was** invitation enough. 
+
+
+
+## Function words & inflected languages
+
+**Jak** powszechnie wiadomo, Wszechświat -- podobnie **jak** życie -- 
+toczy **się** kołem. Kołem, **na** **którego** obręczy zaznaczono osiem 
+magicznych punktów, dających pełny obrót, **czyli** cykl roczny. Punktami 
+**tymi**, leżącymi **na** obręczy koła **w** parach dokładnie 
+**naprzeciw** siebie, **są**: Imbaelk -- **czyli** Kiełkowanie, Lammas -- 
+**czyli** Dojrzewanie, Belleteyn -- Rozkwit **oraz** Saovine -- Zamieranie. 
+**Są** **także** **na** kole zaznaczone dwa Solstycja, **czyli** 
+Przesilenia -- zimowe, zwane Midinvaerne **oraz** Midaete, letnie. **Są** 
+**także** dwa Ekwinokcja, **czyli** Równonoce -- Birke, wiosenna **i** 
+Velen, jesienna. Daty **te** dzielą okrąg **na** osiem części -- **i** 
+**tak** **też** **w** kalendarzu elfów dzieli **się** rok.
+
+
+
+## 
+
+![](files/word_freqs.png){width=800px}
+
+
+
+##
+
+![](files/wordle1.png){width=800px}
+
+
+# Zipf's Law
+
+
+## 
+
+![](files/zipfs_law_first-500-words.png){width=700px}
+
+
+##
+
+![frequency/rank dependence](files/qSUgV.jpg){width=700px}
+
+
+
+## Zipf’s Law on a log-log scale
+
+![frequency/rank dependence on log-log scale](files/jeden_count.png){width=800px}
+
+
+
+
+##
+
+![](files/rank_length.png){width=800px}
+
+
+## 3rd Zipf's Law
+
+The more frequent a word, the more meanings it has
+
+
+
+## An example: Zipf's law
+
+```{r laws1, echo = FALSE, message = FALSE}
+load("R_datasets/Rozm_freqs.Rdata")
+p = plot_ly(y = Rozm[1:300,1], type = "scatter", mode = "markers", text = rownames(Rozm)[1:300])
+p
+```
+
+
+
+## Zipf's law on a log-log scale
+
+```{r laws2, echo = FALSE, message = FALSE}
+p = plot_ly(y = Rozm[,1], type = "scatter", mode = "markers", text = rownames(Rozm)) %>%
+        layout(xaxis = list(type = "log"), yaxis = list(type = "log"))
+p
+```
+
+
+## The least effort principle
+
+```{r laws3, echo = FALSE, message = FALSE}
+p = plot_ly(y = Rozm[,2], type = "scatter", mode = "markers", text = rownames(Rozm)) %>%
+        layout(xaxis = list(type = "log"))
+p
+```
+
+
+## The least effort: another example
+
+
+```{r laws6, echo = FALSE, message = FALSE}
+txt = readLines("R_datasets/Libahunt.txt")
+Libahunt = sort(table(tolower(unlist(strsplit(txt, "\\W+")))), decreasing = TRUE)
+p = plot_ly(y = nchar(names(Libahunt)), type = "scatter", mode = "markers", text = rownames(Libahunt)) %>%
+        layout(xaxis = list(type = "log"))
+p
+```
+
+
+
+
+
+
+
+## Menzerath-Altman law
+
+- The increase of the size of a linguistic construct results in a decrease of the size of its constituents, and vice versa.
+- E.g., the longer a sentence, the shorter the clauses.
+- E.g., the longer a word (in syllables or morphemes), the shorter the syllables or morphemes in sounds.
+
+
+
+
+## Heap's Law
+
+```{r laws4, echo = FALSE, message = FALSE}
+# heaps
+library(stylo)
+data(novels)
+txt = tolower(unlist(strsplit(novels[[1]], "\\W+")))
+results = NULL
+for(i in 2:length(txt)) { 
+    seen = txt[i] %in% txt[1:(i-1)]
+    results = c(results, seen)
+}
+plot(cumsum(!results), ylab = "unseen words", xlab = "running words", col = "blue")
+```
+
+
+
