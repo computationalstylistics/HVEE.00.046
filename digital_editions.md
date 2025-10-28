@@ -10,6 +10,7 @@ format:
     logo: files/DigiTS-RGB-short-SMALL.svg
     css: files/big_logo_DigiTS.css
     self_contained: false
+    #revealjs-url: output_files
 ---
 
 
@@ -17,17 +18,33 @@ format:
 
 ## from printed to digital editing
 
-1. **Paleography & transcription**
-2. **Critical edition** – collate variants, produce apparatus
-3. **Digital transition** – scan → OCR → manual correction
-4. **Encoding** – represent structure, content, and editorial data
-5. **Publication** – web, API, data sets
+- **Paleography & transcription**
+- **Critical edition** – collate variants, produce apparatus
+- **Digital transition** – scan → OCR → manual correction
+- **Encoding** – represent structure, content, and editorial data
+- **Publication** – revolution introduced by hypertext
+
+---
+
+
+
+## textual tradition: a witness
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Carmina_Cantabrigiensia_Manuscr-C-fol436v.jpg#/media/File:Carmina_Cantabrigiensia_Manuscr-C-fol436v.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Carmina_Cantabrigiensia_Manuscr-C-fol436v.jpg" alt="Carmina Cantabrigiensia Manuscr-C-fol436v.jpg"></a></p>
+
+
+---
+
+## stemma codicum
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Howald-sigerist.png#/media/File:Howald-sigerist.png"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Howald-sigerist.png" alt="Howald-sigerist.png"></a></p>
+
 
 ---
 
 ## why TEI‑XML?
 
-- **Standardised**: Widely used by the DH community.
+- **Standardized**: Widely used by the DH community.
 - **Extensible**: Customisable with ODDs (Object Definition Documents).
 - **Rich**: Supports full editorial apparatus, metadata, annotations.
 - **Interoperable**: Converters to HTML, RDF, TEI Lite, etc.
@@ -273,6 +290,30 @@ with an additional file in the _css_ language:
 ```
 
 
+# why annotate?
+
+
+## Sonnet 3: Look In Thy Glass
+
+``` txt
+Look in thy glass, and tell the face thou viewest
+Now is the time that face should form another;
+Whose fresh repair if now thou not renewest,
+Thou dost beguile the world, unbless some mother.
+For where is she so fair whose unear’d womb
+Disdains the tillage of thy husbandry?
+Or who is he so fond will be the tomb
+Of his self-love, to stop posterity?
+Thou art thy mother’s glass, and she in thee
+Calls back the lovely April of her prime:
+So thou through windows of thine age shall see
+Despite of wrinkles this thy golden time.
+But if thou live, remember’d not to be,
+Die single, and thine image dies with thee.
+```
+
+
+
 # XML
 
 
@@ -462,6 +503,18 @@ Now, a validator will check that:
 
 > TEI defines which XML tags should be used.
 
+---
+
+
+## selected TEI editions
+
+- [The Walt Whitman Archive](https://whitmanarchive.org/)
+- [Corpus of Joannes Dantiscus Texts](https://whitmanarchive.org/)
+- [Melville Electronic Library](https://melville.electroniclibrary.org/)
+- [Perseus Digital Library](https://www.perseus.tufts.edu/hopper/)
+- [Catalogue of Digital Editions](https://dig-ed-cat.acdh.oeaw.ac.at/)
+- [Drama Corpora Project (DraCor)](https://dracor.org/)
+- [European Literary Text Collection (ELTeC)](https://distantreading.github.io/ELTeC/)
 
 
 
@@ -556,7 +609,7 @@ Now, a validator will check that:
 - **`<supplied>`** – Editor supplied missing content.
 
 > Annotations can be nested and may reference external resources.
-
+ 
 
 ---
 
@@ -598,48 +651,33 @@ Now, a validator will check that:
 7. **Archiving** – Deposit in institutional repository.
 
 
-
----
-
-## common tools
-
-| Tool | Purpose | Notes |
-|------|---------|-------|
-| **Oxygen XML Editor** | Full‑featured editor, schema support |
-Commercial but free for students |
-| **TEI Editor (XML-Editor)** | Lightweight TEI editor | Open source |
-| **Emacs + RefTeX** | Advanced editing, macros | Requires learning curve
-|
-| **Brat** | Inline annotation viewer | Good for collaborative annotation
-|
-| **TAME (Text Annotation and Manipulation Engine)** | Batch processing |
-Useful for large corpora |
-| **TEI Lite** | Simplified profile for beginners | Focus on core elements
-|
-
-
 ---
 
 
-## Publishing Options
+## publishing options
 
 | Format | Tool | Pros | Cons |
 |--------|------|------|------|
-| **HTML** | `tei2html` (XSLT) | Interactive, browsable | Requires web
-hosting |
+| **HTML** | `tei2html` (XSLT) | Interactive, browsable | Requires web hosting |
 | **PDF** | `tei2pdf` (XSLT) | Print‑ready, offline | Static, large |
 | **EPUB** | `tei2epub` | E‑reader friendly | Limited interactivity |
-| **API** | Custom Python/JavaScript | Programmatic access | Development
-effort |
+| **API** | Custom Python/JavaScript | Programmatic access | Development effort |
 | **Data set** | CSV/JSON | Analysis ready | Loss of markup depth |
 
+---
 
+
+## resources (next steps)
+
+- [TEI Consortium](https://tei-c.org/)
+- [TEI Publisher](teipublisher.com)
+- [TEI by Example Project](https://www.teibyexample.org)
 
 
 
 ---
 
-## Exercise 1 – Encode a Short Passage
+## exercise 1 – encode a short passage
 
 1. Choose a 5‑sentence excerpt from a public‑domain text.
 2. Create a TEI skeleton.
@@ -650,7 +688,7 @@ effort |
 
 ---
 
-## Exercise 2 – Add an Editorial Apparatus
+## exercise 2 – add an editorial apparatus
 
 Using the same passage:
 
@@ -659,6 +697,6 @@ Using the same passage:
 elements.
 3. Document the witness list in `<teiHeader>`.
 
-> Submit your XML file for peer review.
 
 ---
+
