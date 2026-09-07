@@ -6,11 +6,11 @@
 <script src="introduction_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="introduction_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="introduction_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="introduction_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="introduction_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Maciej Eder">
-  <meta name="dcterms.date" content="2025-09-08">
+  <meta name="dcterms.date" content="2026-09-08">
   <title>Introduction to  Digital Humanities</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,10 +18,16 @@
   <link rel="stylesheet" href="introduction_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="introduction_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -96,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="introduction_files/libs/revealjs/dist/theme/quarto-90b9a43576eb98fc7d269de075d0459c.css">
+  <link rel="stylesheet" href="introduction_files/libs/revealjs/dist/theme/quarto-eb5b604027ce06117ca3fa69b1a63429.css">
   <link rel="stylesheet" href="files/big_logo_DigiTS.css">
   <link href="introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="introduction_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -201,12 +207,12 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Maciej Eder 
+Maciej Eder
 </div>
 </div>
 </div>
 
-  <p class="date">2025-09-08</p>
+  <p class="date">2026-09-08</p>
 </section>
 <section id="topics-covered-today" class="slide level2">
 <h2>topics covered today</h2>
@@ -393,34 +399,34 @@ Maciej Eder
 </section>
 <section id="stanford-tagger" class="slide level2">
 <h2>Stanford Tagger</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href=""></a>This     DT</span>
-<span id="cb1-2"><a href=""></a>is       VBZ</span>
-<span id="cb1-3"><a href=""></a>a        DT</span>
-<span id="cb1-4"><a href=""></a>short    JJ</span>
-<span id="cb1-5"><a href=""></a>sentence NN</span>
-<span id="cb1-6"><a href=""></a>.        .</span>
-<span id="cb1-7"><a href=""></a></span>
-<span id="cb1-8"><a href=""></a>So       RB</span>
-<span id="cb1-9"><a href=""></a>is       VBZ</span>
-<span id="cb1-10"><a href=""></a>this     DT</span>
-<span id="cb1-11"><a href=""></a>.        .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="" aria-label="1"></a>This     DT</span>
+<span id="cb1-2"><a href="" aria-label="2"></a>is       VBZ</span>
+<span id="cb1-3"><a href="" aria-label="3"></a>a        DT</span>
+<span id="cb1-4"><a href="" aria-label="4"></a>short    JJ</span>
+<span id="cb1-5"><a href="" aria-label="5"></a>sentence NN</span>
+<span id="cb1-6"><a href="" aria-label="6"></a>.        .</span>
+<span id="cb1-7"><a href="" aria-label="7"></a></span>
+<span id="cb1-8"><a href="" aria-label="8"></a>So       RB</span>
+<span id="cb1-9"><a href="" aria-label="9"></a>is       VBZ</span>
+<span id="cb1-10"><a href="" aria-label="10"></a>this     DT</span>
+<span id="cb1-11"><a href="" aria-label="11"></a>.        .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="structured-output" class="slide level2">
 <h2>Structured output</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource xml number-lines code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href=""></a>&lt;<span class="kw">sentence</span><span class="ot"> id=</span><span class="st">"0"</span>&gt;</span>
-<span id="cb2-2"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"0"</span><span class="ot"> pos=</span><span class="st">"DT"</span>&gt;This&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-3"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"1"</span><span class="ot"> pos=</span><span class="st">"VBZ"</span>&gt;is&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-4"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"2"</span><span class="ot"> pos=</span><span class="st">"DT"</span>&gt;a&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-5"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"3"</span><span class="ot"> pos=</span><span class="st">"JJ"</span>&gt;short&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-6"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"4"</span><span class="ot"> pos=</span><span class="st">"NN"</span>&gt;sentence&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-7"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"5"</span><span class="ot"> pos=</span><span class="st">"."</span>&gt;.&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-8"><a href=""></a>&lt;/<span class="kw">sentence</span>&gt;</span>
-<span id="cb2-9"><a href=""></a>&lt;<span class="kw">sentence</span><span class="ot"> id=</span><span class="st">"1"</span>&gt;</span>
-<span id="cb2-10"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"0"</span><span class="ot"> pos=</span><span class="st">"RB"</span>&gt;So&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-11"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"1"</span><span class="ot"> pos=</span><span class="st">"VBZ"</span>&gt;is&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-12"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"2"</span><span class="ot"> pos=</span><span class="st">"DT"</span>&gt;this&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-13"><a href=""></a>  &lt;<span class="kw">word</span><span class="ot"> wid=</span><span class="st">"3"</span><span class="ot"> pos=</span><span class="st">"."</span>&gt;.&lt;/<span class="kw">word</span>&gt;</span>
-<span id="cb2-14"><a href=""></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource xml number-lines code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="" aria-label="1"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"0"</span>&gt;</span>
+<span id="cb2-2"><a href="" aria-label="2"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"0"</span> <span class="ot">pos=</span><span class="st">"DT"</span>&gt;This&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-3"><a href="" aria-label="3"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"1"</span> <span class="ot">pos=</span><span class="st">"VBZ"</span>&gt;is&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-4"><a href="" aria-label="4"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"2"</span> <span class="ot">pos=</span><span class="st">"DT"</span>&gt;a&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-5"><a href="" aria-label="5"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"3"</span> <span class="ot">pos=</span><span class="st">"JJ"</span>&gt;short&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-6"><a href="" aria-label="6"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"4"</span> <span class="ot">pos=</span><span class="st">"NN"</span>&gt;sentence&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-7"><a href="" aria-label="7"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"5"</span> <span class="ot">pos=</span><span class="st">"."</span>&gt;.&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-8"><a href="" aria-label="8"></a>&lt;/<span class="kw">sentence</span>&gt;</span>
+<span id="cb2-9"><a href="" aria-label="9"></a>&lt;<span class="kw">sentence</span> <span class="ot">id=</span><span class="st">"1"</span>&gt;</span>
+<span id="cb2-10"><a href="" aria-label="10"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"0"</span> <span class="ot">pos=</span><span class="st">"RB"</span>&gt;So&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-11"><a href="" aria-label="11"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"1"</span> <span class="ot">pos=</span><span class="st">"VBZ"</span>&gt;is&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-12"><a href="" aria-label="12"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"2"</span> <span class="ot">pos=</span><span class="st">"DT"</span>&gt;this&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-13"><a href="" aria-label="13"></a>  &lt;<span class="kw">word</span> <span class="ot">wid=</span><span class="st">"3"</span> <span class="ot">pos=</span><span class="st">"."</span>&gt;.&lt;/<span class="kw">word</span>&gt;</span>
+<span id="cb2-14"><a href="" aria-label="14"></a>&lt;/<span class="kw">sentence</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </section></section>
     </div>

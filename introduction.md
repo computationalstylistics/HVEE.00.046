@@ -2,7 +2,7 @@
 title: "Introduction to </br> Digital Humanities"
 subtitle: "(HVEE.00.046)"
 author: Maciej Eder
-date: 2025/09/08
+date: 2026/09/08
 format: 
   revealjs:
     theme: files/pp.scss
